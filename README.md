@@ -1,8 +1,7 @@
 # Trading-App
+This application delivers real-time data on various company stocks, empowering users to make informed buy and sell decisions. When a stock price meets the user’s specified criteria, the app triggers a buy or sell signal according to the user-defined limits. Additionally, users receive the current stock price at the time of the signal, allowing them to accurately assess costs based on live market data.
 
-Welcome to the Trading App prototype! This application provides users with real-time data for various company stocks, allowing them to make informed decisions on buying and selling. If the stock price meets the user's criteria, the app will send a signal to buy or sell stocks according to the user's specified limit. Additionally, users can obtain the cost of the stock based on the current price when a signal is sent.
-
-[Documentation on building Trading App in C++](https://iq.opengenus.org/trading-application-in-cpp/) step by step. This tool has been developed by OG intern Vidhi Srivastava.
+[Documentation on building Trading App in C++](https://iq.opengenus.org/trading-application-in-cpp/) in given step by step.
 
 ![Screenshot](./output.png)
 
@@ -17,14 +16,21 @@ Welcome to the Trading App prototype! This application provides users with real-
 - [Show Your Support](#show-your-support)
 
 ## Purpose of Implementation
-The purpose of implementing the Trading App is to offer users a powerful tool that facilitates real-time stock trading decisions. This application is designed to empower users with the following key functionalities:
+# Trading App
 
-- Real-time Data Monitoring: The app continuously tracks stock prices in real-time, ensuring users have access to up-to-the-minute market information.
+The **Trading App** is designed to provide users with a powerful tool for making real-time stock trading decisions. With this application, users can stay informed about stock prices, receive actionable signals, and assess trade costs efficiently.
 
-- Signal Generation: Based on user-defined criteria, the app generates signals to either buy or sell stocks when specific conditions are met. This feature assists users in making timely trading decisions.
+## Key Features
 
-- Cost Calculation: Users can easily determine the cost of stocks at the moment when a signal is generated, aiding them in assessing potential profit or loss.
+- **Real-time Data Monitoring**: Tracks stock prices continuously, providing users with the latest market information to support timely decisions.
 
+- **Signal Generation**: Sends buy or sell signals based on user-defined criteria, helping users act when specific conditions are met.
+
+- **Cost Calculation**: Calculates stock costs at the moment signals are generated, enabling users to quickly evaluate potential profit or loss.
+
+---
+
+This app empowers users to make informed trading decisions based on live market data and tailored alerts.
 
 ## Project Implementation
 
@@ -32,25 +38,37 @@ This section provides an overview of the implementation of the trading applicati
 
 ### Project Structure
 
-The trading application is organized into several files, each serving a specific purpose. Here's an overview of the project structure:
+# Trading App Project Structure
 
-- **`curl_functions.hpp` and `curl_functions.cpp`:** These files contain functions for making HTTP requests to fetch stock data from an external API. Specifically, they include:
-  - `get_price(const string& ticker_symbol, const string& api)`: Retrieves the price of a stock.
-  - `get_stock_quote(const string& ticker_symbol, const string& api)`: Retrieves detailed stock information.
+The **Trading App** is organized into multiple files, each dedicated to specific functionalities that support real-time stock trading. Here’s an overview of the project's structure:
 
-- **`functions.hpp` and `functions.cpp`:** These files define functions related to the trading logic of the application, including:
+## Project Files
+
+- **`curl_functions.hpp` and `curl_functions.cpp`**  
+  These files contain functions for making HTTP requests to fetch stock data from an external API. Key functions include:
+  - `get_price(const string& ticker_symbol, const string& api)`: Fetches the current price of a specified stock.
+  - `get_stock_quote(const string& ticker_symbol, const string& api)`: Retrieves detailed stock information for a specified ticker.
+
+- **`functions.hpp` and `functions.cpp`**  
+  These files define functions essential to the app's trading logic:
   - `ProfitLoss(float open, float close, string name)`: Calculates and displays the profit or loss percentage for a stock.
-  - `wantTransact(string ans, int amount, float price)`: Handles user input for buying or selling stock and calculates the cost.
-  - `print_data(string name, string exchange, string currency, float open, float high, float low, float close, float volume, float change, float price)`: Prints detailed stock information.
-  - `Sendsignal(float price, float high, float low, string ans, int amount)`: Determines whether to send a buying or selling signal based on stock price.
+  - `wantTransact(string ans, int amount, float price)`: Manages user input for buying or selling stock and calculates transaction costs.
+  - `print_data(string name, string exchange, string currency, float open, float high, float low, float close, float volume, float change, float price)`: Displays comprehensive stock information for the user.
+  - `Sendsignal(float price, float high, float low, string ans, int amount)`: Evaluates stock price against user-defined criteria to determine whether to send a buy or sell signal.
 
-- **`main.cpp`:** The main entry point of the application, where user interactions and the core logic of the program are implemented. This file:
+---
+
+Each file contributes to the adjustable and flexiblity of the Trading App, enabling effective real-time data retrieval, trading logic, and user interaction.
+
+
+- **`main.cpp`:** The main entry point of the application are user interactions and the base logic of the program that are implemented.
+ This file:
   - Prompts the user for a ticker symbol.
   - Reads the API key from the `config.json` file.
   - Makes use of functions from other files to fetch stock data and perform trading-related tasks.
   - Can be customized to add additional trading strategies and features.
 
-- **`config.json`:** This JSON configuration file stores sensitive information, such as the API key required to access external data sources. It's crucial for maintaining security and allows for easy configuration without modifying the code.
+- **`config.json`:** This JSON configuration file stores sensitive information, such as the API key required to access external data sources. It's necessary for maintainance of the security and allows for easy configuration without changing the code.
 
 
 ## Built With
@@ -91,15 +109,3 @@ Before running the Trading App, make sure you have the following prerequisites i
 - **JsonCpp library:** Install the JsonCpp library for JSON parsing and manipulation in C++.
 
 - **API Key:** Sign up at Twelve Data to obtain your own API key. Place your API key in the `config.json` file.
-
-## Authors 👤
-
-### Vidhi Srivastava
-
-- [GitHub](https://github.com/Vidhi0229)
-- [LinkedIn](https://www.linkedin.com/in/vidhisrivastava01/)
-
-## Show Your Support ⭐️⭐️
-
-If you find this project helpful or interesting, please consider giving it a star!
-
