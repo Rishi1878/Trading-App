@@ -81,7 +81,7 @@ To get started with the Trading App, follow these steps:
 
 1. Download or clone this repository using the following command:
    ```
-   git clone https://github.com/OpenGenus/trading-app-in-cpp.git
+   git clone https://github.com/Rishi1878/Trading-App/tree/main
    ```
 
 2. Navigate to the project folder.
