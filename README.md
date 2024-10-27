@@ -12,8 +12,6 @@ This application delivers real-time data on various company stocks, empowering u
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-- [Authors](#authors)
-- [Show Your Support](#show-your-support)
 
 ## Purpose of Implementation
 # Trading App
